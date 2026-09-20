@@ -1,0 +1,14 @@
+sqlalchemy 
+alembic 
+psycopg[binary]
+python-dotenv
+fastapi
+uvicorn
+pytest
+pytest-asyncio
+pydantic[email]
+httpx
+httpx2
+redis
+pwdlib[argon2]
+aiosqlite
