@@ -58,7 +58,7 @@ async def registration_user(
             detail="Server error"
             )
 
-    return {"status": result}
+    return {"status": result is not None, "data": result}
 
     
 

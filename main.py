@@ -10,11 +10,13 @@ from api.auth import router as auth_router
 from api.users import router as user_router
 
 from redis_client.redis_client import init_redis_pool, close_resis_pool
+from database.first_init import first_init
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     await init_redis_pool()
     print("Redis подключение инициализировано")
+    await first_init()
 
     yield
 
