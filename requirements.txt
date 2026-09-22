@@ -12,3 +12,5 @@ httpx2
 redis
 pwdlib[argon2]
 aiosqlite
+jinja2
+python-multipart

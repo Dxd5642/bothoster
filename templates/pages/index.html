@@ -1,0 +1,17 @@
+{% extends base_template %}
+
+{% block title %}Главная — BotHoster{% endblock %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-white rounded-3 shadow-sm">
+    <div class="container-fluid py-3">
+        <h1 class="display-5 fw-bold">Добро пожаловать в BotHoster</h1>
+        <p class="col-md-8 fs-4 text-muted">
+            Удобный сервис для создания, настройки и автоматического развёртывания ваших ботов.
+        </p>
+        <button class="btn btn-primary btn-lg" hx-get="/bots" hx-target="#main-content" hx-push-url="true">
+            Перейти к ботам
+        </button>
+    </div>
+</div>
+{% endblock %}

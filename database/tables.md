@@ -5,7 +5,7 @@
 
 | Поле | Тип | Ограничения | Описание |
 |---|---|---|---|
-| `id` | UUID | PK, NOT NULL | Уникальный идентификатор пользователя |
+| `id` | INT | PK, NOT NULL | Уникальный идентификатор пользователя |
 | `username` | VARCHAR(50) | UNIQUE, NOT NULL | Уникальное имя пользователя |
 | `email` | VARCHAR(255) | UNIQUE, NOT NULL | Email пользователя |
 | `is_verified` | BOOLEAN | NOT NULL, DEFAULT FALSE | Подтверждён ли email |
@@ -23,7 +23,7 @@
 
 | Поле | Тип | Ограничения | Описание |
 |---|---|---|---|
-| `id` | UUID | PK, NOT NULL | Уникальный идентификатор роли |
+| `id` | INT | PK, NOT NULL | Уникальный идентификатор роли |
 | `name` | VARCHAR(50) | UNIQUE, NOT NULL | Название роли |
 | `description` | TEXT | NULL | Описание роли |
 

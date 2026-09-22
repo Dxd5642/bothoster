@@ -1,0 +1,22 @@
+<form hx-post="/login" hx-target="this" hx-swap="outerHTML">
+    {% if error %}
+        <div class="alert alert-danger py-2 mb-3 fs-6" role="alert">
+            {{ error }}
+        </div>
+    {% endif %}
+
+    <div class="mb-3">
+        <label for="login-email" class="form-label">Email или Логин</label>
+        <input type="text" name="username" class="form-control" id="login-email" required placeholder="name@example.com">
+    </div>
+
+    <div class="mb-3">
+        <label for="login-password" class="form-label">Пароль</label>
+        <input type="password" name="password" class="form-control" id="login-password" required placeholder="••••••••">
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100 py-2 mt-2">
+        <span class="htmx-indicator spinner-border spinner-border-sm me-1" role="status"></span>
+        Войти
+    </button>
+</form>

@@ -1,0 +1,31 @@
+<form hx-post="/registration" hx-target="this" hx-swap="outerHTML">
+    {% if error %}
+        <div class="alert alert-danger py-2 mb-3 fs-6" role="alert">
+            {{ error }}
+        </div>
+    {% endif %}
+
+    <div class="mb-3">
+        <label for="reg-username" class="form-label">Имя пользователя</label>
+        <input type="text" name="username" class="form-control" id="reg-username" required placeholder="username">
+    </div>
+
+    <div class="mb-3">
+        <label for="reg-email" class="form-label">Email</label>
+        <input type="email" name="email" class="form-control" id="reg-email" required placeholder="name@example.com">
+    </div>
+
+    <div class="mb-3">
+        <label for="reg-password" class="form-label">Пароль</label>
+        <input type="password" name="password" class="form-control" id="reg-password" minlength="8" required placeholder="Минимум 8 символов">
+    </div>
+
+    <div class="mb-3">
+        <label for="reg-confirm-password" class="form-label">Повторите пароль</label>
+        <input type="password" name="confirm_password" class="form-control" id="reg-confirm-password" minlength="8" required placeholder="••••••••">
+    </div>
+
+    <button type="submit" class="btn btn-success w-100 py-2 mt-2">
+        Зарегистрироваться
+    </button>
+</form>

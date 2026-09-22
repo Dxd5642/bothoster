@@ -1,10 +1,7 @@
 from fastapi import APIRouter
 
-router = APIRouter(prefix="", tags=['Main'])
+router = APIRouter(prefix="", tags=['API Main'])
 
-@router.get("/", status_code=200)
-async def root():
-    return {"message": "Hello"}
 
 
 @router.get("/health", status_code=200)

@@ -8,7 +8,7 @@ if not DATABASE_URL:
 
 engine = create_async_engine(
     DATABASE_URL,
-    echo=DEBUG
+    echo=False
 )
 
 async_session_maker = async_sessionmaker(

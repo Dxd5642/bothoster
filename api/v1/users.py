@@ -19,7 +19,7 @@ from core.security import hash_password, verify_password
 from core.sessions import generate_session
 from api.dependencies import get_current_user
 
-router = APIRouter(prefix="/user", tags=['User'])
+router = APIRouter(prefix="/v1/user", tags=['API User'])
 
 @router.get("/")
 async def profile_user(user=Depends(get_current_user)):

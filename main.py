@@ -1,13 +1,13 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 import uvicorn
 
 from settings.setting import DEBUG, HOST, PORT
 from middleware.middleware import setup_middleware
 
-from api.common import router as common_router 
-from api.auth import router as auth_router
-from api.users import router as user_router
+from api.router import router as api_router
+from web.router import router as web_router
 
 from redis_client.redis_client import init_redis_pool, close_resis_pool
 from database.first_init import first_init
@@ -35,10 +35,10 @@ app = FastAPI(
 
 setup_middleware(app) 
 
-app.include_router(common_router)
-app.include_router(auth_router)
-app.include_router(user_router)
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
+app.include_router(api_router)
+app.include_router(web_router)
 
 
 
